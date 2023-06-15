@@ -11,10 +11,9 @@ import 'jspdf-autotable'
 import { ToastContainer,toast } from "react-toastify";
 
 
-const List_plan = () => {
+const List_pay = () => {
     const baseUrl = "https://guaytambosfit.com/modelsGym/models/pays/pays.php";	
     const [data, setData] = useState([]);		
-	
 	const col=[
 		{
 			name: 'ID PAGO',
@@ -58,8 +57,6 @@ const List_plan = () => {
 			sortable: false,
 		}
 	]
-
-	
 	const requestGet=async()=>{
         await axios.get(baseUrl).then(response=>{
             setData(response.data);
@@ -80,13 +77,11 @@ const List_plan = () => {
 	useEffect(()=>{
         requestGet();
     },[])
-	
 	const columnsPDF = [
 		{title: "ID", field: "id_plan"},
 		{title: "Nombre", field: "nom_plan"},
 		{title: "Asistencias", field: "asis_plan"},
 	]
-
 	const downloadPdf=()=>{
 		const doc=new jsPDF()
 		doc.text("Guaytambos Fit Pagos",20,10)
@@ -98,7 +93,6 @@ const List_plan = () => {
 		doc.save('gfit_pagos.pdf')
 		toast.info("Reporte Completado!");
 	}
-
 	return (
 		<Fragment>
 			<Breadcrumb title="Lista de pagos" parent="Menu" />
@@ -121,8 +115,7 @@ const List_plan = () => {
 											Exportar a PDF
 										</button>
 									</Card>	
-								</Col>
-								
+								</Col>								
 								<div
 									id="batchDelete"
 									className="category-table order-table coupon-list-delete"
@@ -146,5 +139,5 @@ const List_plan = () => {
 	);
 };
 
-export default List_plan;
+export default List_pay;
 
