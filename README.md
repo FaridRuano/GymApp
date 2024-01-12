@@ -87,5 +87,4 @@ This project contain Author Rights so you will not be able to use it without the
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
